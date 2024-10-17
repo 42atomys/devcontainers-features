@@ -17,7 +17,26 @@ This feature installs Meilisearch in your development container. Meilisearch is 
     "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
     "features": {
         "ghcr.io/42atomys/devcontainers-features/meilisearch:1": {
-            "version": "1.10.3"
+            "version": "v1.10.3"
         }
     }
 }
+```
+
+If no version is specified, the latest version will be installed by default.
+
+## Options
+
+### `meilisearch`
+
+| Options Id | Description | Type | Default Value |
+|------------|-------------|------|---------------|
+| version    | The version of Meilisearch to install. | string | latest |
+
+## Mounts
+
+The feature mounts a volume for Meilisearch data: `/var/lib/meilisearch/data`
+
+## Additional Information
+
+For more details, refer to the [devcontainer Feature specification](https://containers.dev/implementors/features/#devcontainer-feature-json-properties).

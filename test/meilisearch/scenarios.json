@@ -1,0 +1,10 @@
+{
+  "install_specific_version": {
+    "image": "mcr.microsoft.com/devcontainers/base",
+    "features": {
+      "meilisearch": {
+        "version": "1.10.2"
+      }
+    }
+  }
+}
