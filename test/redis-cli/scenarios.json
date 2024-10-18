@@ -1,0 +1,10 @@
+{
+  "install_specific_version": {
+    "image": "mcr.microsoft.com/devcontainers/base",
+    "features": {
+      "redis-cli": {
+        "version": "7.4.0"
+      }
+    }
+  }
+}

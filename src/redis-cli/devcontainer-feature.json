@@ -1,0 +1,25 @@
+{
+  "name": "Redis CLI",
+  "id": "redis-cli",
+  "version": "1.0.0",
+  "description": "A feature to install Redis CLI",
+  "documentationURL": "https://github.com/42atomys/devcontainers-features/tree/main/src/redis-cli",
+  "keywords": ["redis-cli", "redis", "client"],
+  "options": {
+    "version": {
+      "type": "string",
+      "proposals": [
+        "latest",
+        "7.4.1"
+      ],
+      "default": "latest",
+      "description": "The version of Redis CLI to install"
+    }
+  },
+  "installsAfter": [
+    "ghcr.io/devcontainers/features/common-utils"
+  ],
+  "dependsOn": {
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  }
+}

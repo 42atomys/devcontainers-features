@@ -21,3 +21,18 @@ This feature installs Meilisearch in your development container. Meilisearch is 
         }
     }
 }
+
+### `redis-cli`
+
+This feature installs the Redis CLI in your development container. The Redis CLI is a command-line interface for interacting with Redis.
+
+```jsonc
+{
+    "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+    "features": {
+        "ghcr.io/42atomys/devcontainers-features/redis-cli:1": {
+            "version": "7.4.0"
+        }
+    }
+}
+```
