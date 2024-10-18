@@ -3,6 +3,8 @@
   "id": "meilisearch",
   "version": "1.0.0",
   "description": "A feature to install Meilisearch",
+  "documentationURL": "https://github.com/42atomys/devcontainers-features/tree/main/src/meilisearch",
+  "keywords": ["meilisearch"],
   "options": {
     "version": {
       "type": "string",
@@ -25,5 +27,5 @@
     }
   ],
   "entrypoint": "/usr/local/share/meilisearch-server-init.sh",
-  "privileged": true
+  "privileged": true,
 }
