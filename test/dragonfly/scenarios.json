@@ -1,0 +1,10 @@
+{
+  "install_specific_version": {
+    "image": "mcr.microsoft.com/devcontainers/base",
+    "features": {
+      "dragonfly": {
+        "version": "1.24.0"
+      }
+    }
+  }
+}

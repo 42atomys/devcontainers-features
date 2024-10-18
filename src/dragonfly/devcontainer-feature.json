@@ -1,0 +1,43 @@
+{
+  "name": "DragonFly",
+  "id": "dragonfly",
+  "version": "1.0.0",
+  "description": "A feature to install dragonfly",
+  "documentationURL": "https://github.com/42atomys/devcontainers-features/tree/main/src/dragonfly",
+  "keywords": ["dragonfly"],
+  "options": {
+    "version": {
+      "type": "string",
+      "proposals": [
+        "latest",
+        "v1.23.2"
+      ],
+      "default": "latest",
+      "description": "The version of dragonfly to install"
+    },
+    "extraArguments": {
+      "type": "string",
+      "default": "",
+      "description": "Additional arguments to pass to the dragonfly server",
+      "proposals": [
+        "--requirepass=youshallnotpass",
+        "--cache_mode=true --maxmemory=12gb"
+      ]
+    }
+  },
+  "installsAfter": [
+    "ghcr.io/devcontainers/features/common-utils"
+  ],
+  "dependsOn": {
+    "ghcr.io/42atomys/devcontainers-features/redis-cli:1": {}
+  },
+  "mounts": [
+    {
+      "source": "dind-var-lib-dragonfly-${devcontainerId}",
+      "target": "/var/lib/dragonfly/data",
+      "type": "volume"
+    }
+  ],
+  "entrypoint": "/usr/local/share/dragonfly-server-init.sh",
+  "privileged": true
+}
