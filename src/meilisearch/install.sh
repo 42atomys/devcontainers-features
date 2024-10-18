@@ -139,6 +139,15 @@ set +e
 # to set this script to ENTRYPOINT while still executing the default CMD.
 exec "$@"
 EOF
+
+  # Move the binary to the bin directory
+  mv meilisearch /usr/local/bin/meilisearch
+  chmod +x /usr/local/bin/meilisearch
+
+  # Create meilisearch folders
+  mkdir -p /var/lib/meilisearch && chown ${USERNAME}:root /var/lib/meilisearch
+
+  # Create the entrypoint script
   chmod +x /usr/local/share/meilisearch-server-init.sh \
     && chown ${USERNAME}:root /usr/local/share/meilisearch-server-init.sh
 }
@@ -160,15 +169,6 @@ main() {
     get_specific_version
   fi
 
-  # Move the binary to the bin directory
-  echo "Installing MeiliSearch to /usr/local/bin..."
-  mv meilisearch /usr/local/bin/meilisearch
-  chmod +x /usr/local/bin/meilisearch
-
-  # Create meilisearch folders
-  mkdir -p /var/lib/meilisearch && chown ${USERNAME}:root /var/lib/meilisearch
-
-  # Set up the entrypoint script
   setup_meilisearch
 
   echo "MeiliSearch $VERSION has been installed successfully."
