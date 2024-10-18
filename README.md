@@ -14,13 +14,14 @@ This feature installs Meilisearch in your development container. Meilisearch is 
 
 ```jsonc
 {
-    "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
-    "features": {
-        "ghcr.io/42atomys/devcontainers-features/meilisearch:1": {
-            "version": "1.10.3"
-        }
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "features": {
+    "ghcr.io/42atomys/devcontainers-features/meilisearch:1": {
+      "version": "1.10.3"
     }
+  }
 }
+```
 
 ### `redis-cli`
 
@@ -28,11 +29,41 @@ This feature installs the Redis CLI in your development container. The Redis CLI
 
 ```jsonc
 {
-    "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
-    "features": {
-        "ghcr.io/42atomys/devcontainers-features/redis-cli:1": {
-            "version": "7.4.0"
-        }
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "features": {
+    "ghcr.io/42atomys/devcontainers-features/redis-cli:1": {
+      "version": "7.4.0"
     }
+  }
+}
+```
+
+### `dragonfly`
+
+This feature installs Dragonfly in your development container. Dragonfly is a distributed file system for large-scale data centers.
+
+```jsonc
+{
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "features": {
+    "ghcr.io/42atomys/devcontainers-features/dragonfly:1": {
+      "version": "1.0.0"
+    }
+  }
+}
+```
+
+### `minio-server`
+
+This feature installs MinIO server and client in your development container. MinIO is a high-performance, distributed object storage server.
+
+```jsonc
+{
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "features": {
+    "ghcr.io/42atomys/devcontainers-features/minio-server:1": {
+      "extraArguments": "--console-address ':9001'",
+    }
+  }
 }
 ```

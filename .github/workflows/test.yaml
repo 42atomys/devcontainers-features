@@ -16,6 +16,7 @@ jobs:
           - meilisearch
           - redis-cli
           - dragonfly
+          - minio-server
         baseImage:
           - debian:latest
           - ubuntu:latest
@@ -38,6 +39,7 @@ jobs:
           - meilisearch
           - redis-cli
           - dragonfly
+          - minio-server
     steps:
       - uses: actions/checkout@v4
 

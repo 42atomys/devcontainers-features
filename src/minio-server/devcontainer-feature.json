@@ -1,0 +1,29 @@
+{
+  "name": "Minio Server",
+  "id": "minio-server",
+  "version": "1.0.0",
+  "description": "A feature to install Minio Server",
+  "documentationURL": "https://github.com/42atomys/devcontainers-features/tree/main/src/minio-server",
+  "keywords": ["minio-server", "minio", "server"],
+  "options": {
+    "extraArguments": {
+      "type": "string",
+      "default": "",
+      "description": "Additional arguments to pass to the minio server",
+      "proposals": [
+        "--console-address ':9001'"
+      ]
+    }
+  },
+  "installsAfter": [
+    "ghcr.io/devcontainers/features/common-utils"
+  ],
+  "mounts": [
+    {
+      "source": "dind-var-lib-minio-${devcontainerId}",
+      "target": "/var/lib/minio/data",
+      "type": "volume"
+    }
+  ],
+  "entrypoint": "/usr/local/share/minio-server-init.sh"
+}
